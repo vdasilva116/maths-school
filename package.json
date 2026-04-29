@@ -8,11 +8,12 @@
   "private": true,
   "scripts": {
     "lint": "eslint -c ./eslint.config.js \"./src*/**/*.{ts,js,cjs,mjs,vue}\"",
-    "format": "prettier --write \"**/*.{js,ts,vue,css,scss,html,md,json}\" --ignore-path .gitignore",
+    "format": "prettier --write \"**/*.{js,ts,vue,scss,html,md,json}\" --ignore-path .gitignore",
     "test": "echo \"No test specified\" && exit 0",
     "dev": "quasar dev",
     "build": "quasar build",
-    "postinstall": "quasar prepare"
+    "postinstall": "quasar prepare",
+    "deploy": "gh-pages -d dist/spa"
   },
   "dependencies": {
     "@quasar/extras": "^1.16.4",
@@ -31,13 +32,13 @@
     "vue-eslint-parser": "^10.4.0",
     "@vue/eslint-config-prettier": "^10.2.0",
     "prettier": "^3.8.1",
-    "@types/node": "^22.19.11",
+    "@types/node": "^20.5.9",
     "@quasar/app-vite": "^2.5.1",
     "autoprefixer": "^10.4.27",
     "typescript": "^5.9.3"
   },
   "engines": {
-    "node": "^28 || ^26 || ^24 || ^22.12",
+    "node": "^28 || ^26 || ^24 || ^22 || ^20 || ^18",
     "npm": ">= 6.13.4",
     "yarn": ">= 1.21.1",
     "pnpm": ">= 10.0.0"

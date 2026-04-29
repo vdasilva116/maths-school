@@ -33,7 +33,7 @@ export default defineConfig((/* ctx */) => {
     // Full list of options: https://v2.quasar.dev/quasar-cli-vite/quasar-config-file#build
     build: {
       target: {
-        browser: 'baseline-widely-available',
+        browser: ['es2022', 'firefox115', 'chrome115', 'safari14'],
         node: 'node22',
       },
 
@@ -42,8 +42,8 @@ export default defineConfig((/* ctx */) => {
         vueShim: true,
         // extendTsConfig (tsConfig) {}
       },
-
-      vueRouterMode: 'hash', // available values: 'hash', 'history'
+      publicPath: '/maths-school/',
+      vueRouterMode: 'history', // available values: 'hash', 'history'
       // vueRouterBase,
       // vueDevtools,
       // vueOptionsAPI: false,
@@ -80,7 +80,8 @@ export default defineConfig((/* ctx */) => {
     // Full list of options: https://v2.quasar.dev/quasar-cli-vite/quasar-config-file#devserver
     devServer: {
       // https: true,
-      open: true, // opens browser window automatically
+      port: 5020,
+      open: false, // opens browser window automatically
     },
 
     // https://v2.quasar.dev/quasar-cli-vite/quasar-config-file#framework
